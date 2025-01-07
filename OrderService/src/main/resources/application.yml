@@ -1,0 +1,12 @@
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        slidingWindowSize: 20
+        minimumNumberOfCalls: 10
+    instances:
+      productService:
+        base-config: default
